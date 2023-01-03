@@ -11,5 +11,7 @@ class BetaTester extends Model
      *
      * @var array
      */
-    protected $fillable = ['email'];
+    protected $fillable = [
+        'email'
+    ];
 }
