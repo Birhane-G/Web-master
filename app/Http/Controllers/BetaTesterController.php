@@ -19,15 +19,16 @@ class BetaTesterController extends Controller
         ]);
         if (BetaTester::where('email', $request->email)->first()) {
             $errors = new \Illuminate\Support\MessageBag();
-            $errors->add('email', 'Email is already on our list.');
+            // $errors->add('email', 'Email is already on our list.');
             // return view('welcome')->withErrors($errors);
-            return response($errors, 400);
+            return response("Email is already on our list.", 400);
         }
         // $betaTester = BetaTester::create($request->only('email'));
         // $betaTester = BetaTester::create($request->only('source'));
         $betaTester = new BetaTester;
         $betaTester->email = $request->email;
         $betaTester->source = $request->source;
+        $betaTester->text = $request->text;
         $betaTester->save();
         
         // return view('welcome', ['success' => true]);

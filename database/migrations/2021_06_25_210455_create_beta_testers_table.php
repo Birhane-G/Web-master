@@ -17,6 +17,7 @@ class CreateBetaTestersTable extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('source');
+            $table->string('text')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });
