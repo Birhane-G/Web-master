@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::middleware(['cors'])->get('/', function () {
     return view('welcome');
 });
 
-Route::post('/', 'BetaTesterController@register');
+Route::middleware(['cors'])->post('/', 'BetaTesterController@register');

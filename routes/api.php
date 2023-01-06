@@ -17,4 +17,4 @@ use App\Http\Controllers\BetaTesterController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/userReg', [BetaTesterController::class, 'register']);
+Route::middleware(['cors'])->post('/userReg', [BetaTesterController::class, 'register']);
